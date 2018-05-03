@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 
 import { SoundsPage } from '../index.pages';
-
-/**
- * Generated class for the MainPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
     selector: 'page-main',
@@ -16,13 +9,17 @@ import { SoundsPage } from '../index.pages';
 })
 export class MainPage {
 
-    sonidos:any = SoundsPage;
+    sonidos: any = SoundsPage;
 
-    constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController, private menuCtrl: MenuController) {
     }
 
-    navegarPagina(){
+    navegarPagina() {
         this.navCtrl.push(SoundsPage);
+    }
+
+    showMenu() {
+        this.menuCtrl.toggle();
     }
 
 
